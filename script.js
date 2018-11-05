@@ -6,6 +6,7 @@ const textInput = document.querySelector('#text-input');
 const voiceSelect = document.querySelector('#voice-select');
 const rate = document.querySelector('#rate');
 const pitch = document.querySelector('#pitch');
+const animationBody = document.querySelector('#title-content');
 
 //We just init voices array
 let voices = [];
@@ -39,10 +40,15 @@ const speak = () => {
         return;
     }
     if(textInput.value !== '') {
+        //Animation functionality
+        animationBody.style.background = 'url(images/voice.gif)';
+        animationBody.style.backgroundRepeat = 'repeat-x';
+        animationBody.style.backgroundSize = '100% 100%';
         //Get speak text from the text-area
         const speakText = new SpeechSynthesisUtterance(textInput.value);
         //App ends Speaking
         speakText.onend = e => {
+            animationBody.style.background = '';
             console.log('Done speaking...');
             M.toast({html: "I'm done speaking...", displayLength: 1000});
         };

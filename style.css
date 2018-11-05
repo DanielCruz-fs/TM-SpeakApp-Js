@@ -56,3 +56,6 @@ input[type=text] {
 #btn-app{
     width: 100%;
 }
+#voice-button{
+    padding-bottom: 12px;
+}
