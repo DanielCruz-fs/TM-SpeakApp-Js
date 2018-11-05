@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Norican" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="style.css">
+  </head>
+    <body>
+    <div class="se-pre-con"></div>
+        <div class="container">
+            <div class="row center-align" id="title-content">
+                <img class="responsive-img" id="logo" src="images/logo.png">
+                <h4 id="title">SpeakApp</h4>
+            </div>
+            <div class="row" id="main-content">
+                <div class="input-field col s12 m8 offset-m2">
+                    <i class="material-icons prefix">speaker_phone</i>
+                    <textarea id="text-input" class="materialize-textarea"></textarea>
+                    <label for="text-input">Type Anything...</label>
+                </div>
+                <div class="col s12 m8 offset-m2">
+                    <form action="#">
+                        <p class="range-field">
+                            <input type="range" id="rate"  min="0.5" max="2" value="1" step="0.1" />
+                        </p>        
+                    </form>
+                    <h6 class="center-align" id="range-text">Rate</h6>
+                </div>
+                <div class="col s12 m8 offset-m2" id="pitch-content">
+                    <form action="#">
+                        <p class="range-field">
+                            <input type="range" id="pitch"  min="0.5" max="2" value="1" step="0.1" />
+                        </p>        
+                    </form>
+                    <h6 class="center-align" id="range-text">Pitch</h6>
+                </div>
+                <div class="input-field col s12 m8 offset-m2">
+                <select class="icons" id="voice-select">
+                    <option value="" disabled selected>Choose one...</option>
+                    <!-- <option value="" data-icon="images/voice.png">example 2</option>
+                    <option value="" data-icon="images/voice.png">example 3</option>
+                    <option value="" data-icon="images/voice.png">example 1</option>
+                    <option value="" data-icon="images/voice.png">example 2</option>
+                    <option value="" data-icon="images/voice.png">example 3</option> -->
+                </select>
+                    <label>Select A Voice</label>
+                </div>
+                <div class="col s12 m12" id="voice-button">
+                    <p class="center-align">
+                    <a class="waves-effect waves-light btn orange darken-1 z-depth-5 center-align" id="btn-app">Scream</a>
+                    </p>
+                </div>
+            </div>
+        </div>     
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Wait for window load
+	$(window).on('load',function() {
+		// Animate loader off screen
+		$(".se-pre-con").fadeOut("slow");;
+	});
+    $(document).ready(function(){
+        $('select').formSelect();
+    });
+    </script>
+  </body>
+</html>
